@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEYEYEONG</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+       // 기존 코드 수정: window 대신 #content의 스크롤 이벤트로 변경
+        const content = document.querySelector('#content'); // 우측 #content 영역 선택
+        const header = document.querySelector('#content header'); // 우측 #content 안의 header 선택
+
+        content.addEventListener('scroll', function() {
+        // 현재 스크롤 위치가 content의 최상단을 넘었을 때
+        if (content.scrollTop > 0) {
+            header.style.position = 'fixed'; // position을 fixed로 변경
+            header.style.top = `${content.offsetTop}px`; // 전체 뷰포트 기준 top 위치 설정 (content의 위치 기준)
+            header.style.width = `${content.offsetWidth}px`; // content 영역의 너비에 맞춰 고정
+        } else {
+            header.style.position = 'absolute'; // 스크롤이 content 영역 위로 올라가면 다시 absolute로 변경
+            header.style.width = '100%'; // 부모 요소인 content의 너비에 맞춤
+            header.style.top = '0'; // top 위치 초기화
+        }
+        });
+    </script>
+    <div id="wrap">
+        <div id="visual">
+            <img src="images/visual_con.png" alt="">
+        </div>
+        <div id="content">
+            <header>
+                <h1 class="logo"><img src="images/logo.png" alt=""></h1>
+                <ul class="gnb">
+                    <li><a href="#">Works</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </header>
+            <div id="works">
+                <h2>Works</h2>
+                <ul>
+                    <li>
+                        <h3>KOVO</h3>
+                        <ul>
+                            <li>UX/UI</li>
+                            <li>figma</li>
+                            <li>Responsive</li>
+                            <li>2023</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>KOVO</h3>
+                        <ul>
+                            <li>UX/UI</li>
+                            <li>figma</li>
+                            <li>Responsive</li>
+                            <li>2023</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>KOVO</h3>
+                        <ul>
+                            <li>UX/UI</li>
+                            <li>figma</li>
+                            <li>Responsive</li>
+                            <li>2023</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>KOVO</h3>
+                        <ul>
+                            <li>UX/UI</li>
+                            <li>figma</li>
+                            <li>Responsive</li>
+                            <li>2023</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>KOVO</h3>
+                        <ul>
+                            <li>UX/UI</li>
+                            <li>figma</li>
+                            <li>Responsive</li>
+                            <li>2023</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>KOVO</h3>
+                        <ul>
+                            <li>UX/UI</li>
+                            <li>figma</li>
+                            <li>Responsive</li>
+                            <li>2023</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>KOVO</h3>
+                        <ul>
+                            <li>UX/UI</li>
+                            <li>figma</li>
+                            <li>Responsive</li>
+                            <li>2023</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>KOVO</h3>
+                        <ul>
+                            <li>UX/UI</li>
+                            <li>figma</li>
+                            <li>Responsive</li>
+                            <li>2023</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>KOVO</h3>
+                        <ul>
+                            <li>UX/UI</li>
+                            <li>figma</li>
+                            <li>Responsive</li>
+                            <li>2023</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>KOVO</h3>
+                        <ul>
+                            <li>UX/UI</li>
+                            <li>figma</li>
+                            <li>Responsive</li>
+                            <li>2023</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>KOVO</h3>
+                        <ul>
+                            <li>UX/UI</li>
+                            <li>figma</li>
+                            <li>Responsive</li>
+                            <li>2023</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>KOVO</h3>
+                        <ul>
+                            <li>UX/UI</li>
+                            <li>figma</li>
+                            <li>Responsive</li>
+                            <li>2023</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>KOVO</h3>
+                        <ul>
+                            <li>UX/UI</li>
+                            <li>figma</li>
+                            <li>Responsive</li>
+                            <li>2023</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>KOVO</h3>
+                        <ul>
+                            <li>UX/UI</li>
+                            <li>figma</li>
+                            <li>Responsive</li>
+                            <li>2023</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>KOVO</h3>
+                        <ul>
+                            <li>UX/UI</li>
+                            <li>figma</li>
+                            <li>Responsive</li>
+                            <li>2023</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
