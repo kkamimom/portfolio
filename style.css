@@ -97,7 +97,6 @@ body {
     font-size: 1.4rem;
     line-height: 1;
     color: #000;
-    overflow: hidden;
     scroll-behavior:smooth;
 }
 
@@ -118,13 +117,38 @@ body {
     height: 100vh; /* 좌측 고정 높이 */
     overflow:hidden;
     text-align: center;
+    position: relative;
+}
+
+#visual > div {
+    width: 100%;
+    height: 100%;
+}
+
+#visual .v_pc, #visual .v_mob {
+    background: url(images/visual_con.png) no-repeat center center;
+    background-size: contain;
+}
+
+#visual .v_tab, #visual .v_mob {
+    display: none;
+}
+
+#visual .v_tab {
+    background: url(images/visual_con_t.png) no-repeat center center;
+    background-size: contain;
+}
+
+#visual .v_mob {
+
 }
 
 #visual img {
-    width: 73%;
+    width: 78%;
 }
 
 #content {
+    scroll-behavior: smooth;
     grid-column: span 5; /* 우측 5컬럼 */
     height: 100vh; /* 우측은 높이 자유 */
     overflow-y: auto; /* 스크롤 가능하게 */
@@ -135,55 +159,54 @@ body {
     background: url(images/bg.png) repeat center top;
     background-size: contain;
 }
+
 #content::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
 }
 
-#content p {
-    font-size:500px;
-    color:#fff;
+#wrap .h_mob {
+    display: none;
 }
 
-#content header {
+header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%; 
-    grid-column: span 5; /* 우측 5컬럼 */
+    background: transparent; /* 초기 배경색 투명 설정 */
+    padding: 24px;
+    z-index: 100; /* 다른 요소보다 위에 위치 */
     display: flex;
-    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.9);
-    padding: 24px;
 }
 
-#content header .logo {
-    width: 67px;
-    height: auto;
+header .logo {
+    width: auto;
+    height: 54px;
 }
 
-#content header .logo img {
-    width: 100%;
-    height: auto;
+header .logo img {
+    width: auto;
+    height: 100%;
 }
 
-#content header .gnb {
+header .gnb {
     width: auto;
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-end;
 }
 
-#content header .gnb li {
+header .gnb li {
     margin-left:4px;
 }
 
-#content header .gnb li:first-child {
+header .gnb li:first-child {
     margin-left:0;
 }
 
-#content header .gnb li a {
+header .gnb li a {
     font-size: 16px;
     font-weight: 400;
     color:#fff;
@@ -192,7 +215,7 @@ body {
     background: transparent;
 }
 
-#content header .gnb li:hover a {
+header .gnb li:hover a {
     background: #fff;
     color:#000;
     transition: opacity 0.3s ease;
@@ -201,13 +224,17 @@ body {
 #content > div {
     padding-top: 160px;
 }
-#works h2 {
+
+#content > div > h2 {
     font-family: Helvetica;
     font-weight: 800;
     color:#fff;
     font-size:60px;
-    padding: 24px;
     margin-bottom: 40px;
+}
+
+#works h2 {
+    padding: 0 24px;
 }
 
 #works > ul {
@@ -215,7 +242,7 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.2)
 }
 
-#works > ul > li {
+#works .work_tit {
     width: 100%;
     padding: 32px 24px;
     border-bottom:1px solid rgba(255, 255, 255, 0.2);
@@ -226,14 +253,14 @@ body {
 
 }
 
-#works > ul > li > h3 {
+#works .work_tit h3 {
     font-family: Helvetica;
     font-weight: 100;
     color:#fff;
     font-size:28px;
 }
 
-#works > ul > li > ul{
+#works .work_tit > ul{
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -241,7 +268,7 @@ body {
 
 }
 
-#works > ul > li > ul > li {
+#works .work_tit > ul > li {
     font-size: 14px;
     font-weight: 400;
     color:#fff;
@@ -252,6 +279,193 @@ body {
     margin-left: 4px;
 }
 
-#works > ul > li > ul > li:first-child {
+#works .work_tit > ul > li:first-child {
     margin-left: 0;
+}
+
+#works .work_detail {
+    position: fixed; /* 화면 기준으로 위치 */
+    top: 0;
+    left: -100vw; /* 시작 위치: 화면 바깥 */
+    height: 100vh; /* 화면 전체 높이 */
+    background: #000;
+    z-index: 10; /* 다른 요소보다 위로 */
+    transition: transform 0.6s ease; /* 트랜지션 적용 */
+    color:#fff;
+}
+
+
+#about {
+    padding: 0 24px;
+    color:#fff;
+}
+
+#about h3 {
+    font-family: Helvetica;
+    font-weight: 100;
+    color:#fff;
+    font-size:28px;
+    margin-bottom: 24px;
+}
+
+#about p {
+    font-size:16px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+#about img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+}
+
+#about ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#about ul li {
+    font-size: 14px;
+    font-weight: 400;
+    color:#fff;
+    padding: 4px 12px;
+    border-radius: 14px;
+    border: 1px solid #fff;
+    background: transparent;
+    margin-right: 4px;
+    margin-top: 4px;
+}
+
+
+/* Tablet */
+@media (max-width: 1024px) {
+    #wrap {
+        display: block;
+    }
+
+    #wrap .h_pc {
+        display: none;
+    }
+
+    #wrap .h_mob {
+        display: flex;
+    }
+    
+    #visual {
+        height: 90vh;
+        padding: 126px 24px 24px 24px;
+    }
+
+    #visual .v_pc, #visual .v_mob {
+        display: none;
+    }
+    
+    #visual .v_tab {
+        display: block;
+        width: 100%;
+    }
+
+    header {
+        position: fixed; /* 최상단에 고정 */
+        top: 0;
+        left: 0;
+    }
+    
+    #content {
+        height: auto;
+    }
+
+    #content > div {
+        padding-top: 120px;
+    }
+
+    #works .work_detail {
+        display: none;
+    }
+    
+}
+
+
+
+/* mobile */
+@media (max-width: 768px) {
+    #visual {
+        height: 60vh;
+        padding: 68px 16px 16px 16px ;
+    }
+
+    #visual .v_pc, #visual .v_tab {
+        display: none;
+    }
+
+    #visual .v_mob {
+        display: block;
+    }
+
+    #content > div {
+        padding-top: 40px;
+    }
+
+    #content > div > h2 {
+        font-size:28px;
+        margin-bottom: 20px;
+    }
+
+    header {
+        padding: 16px;
+    }
+
+    header .logo {
+        height: 32px;
+    }
+
+    header .gnb li a {
+        font-size:12px;
+    }
+
+    #works h2 {
+        padding: 0 16px;
+    }
+
+    #works .work_tit {
+        padding: 16px;
+        display: block;
+    }
+
+    #works .work_tit h3 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    #works .work_tit > ul {
+        justify-content: flex-end;
+    }
+
+    #works .work_tit > ul > li {
+        font-size:12px;
+        padding: 4px 8px;
+    }
+
+    #about p {
+        font-size:14px;
+        margin-bottom: 12px;
+    }
+
+    #about h3 {
+        font-size:18px;
+        margin-bottom: 12px;
+    }
+
+    #about img {
+        margin-bottom: 8px;
+    }
+
+    #about ul li {
+        font-size:12px;
+        padding: 4px 8px;
+    }
 }
