@@ -329,6 +329,18 @@
                         setWorkDetailSizeAndPosition(detail, isTablet);
                     });
                 });
+
+                const handleScroll = () => {
+    const isTablet = isTabletSize();
+    workDetails.forEach(detail => {
+        if (detail.classList.contains('active')) {
+            // 스크롤 중에도 active 상태 유지
+            detail.style.display = 'block';
+        }
+    });
+};
+
+window.addEventListener('scroll', handleScroll);
             });
         
             </script>
