@@ -445,6 +445,10 @@ header .gnb li:hover a {
 
 /* Tablet */
 @media (max-width: 1024px) {
+
+    #works .work_detail {
+        display: none;
+    }
     
     #wrap {
         display: block;
