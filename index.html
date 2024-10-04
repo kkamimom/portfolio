@@ -17,11 +17,9 @@
 <body>
     <script>
         $(window).scroll(function () { 
-    var scrollValue = $(document).scrollTop();
-
-    console.log(scrollValue);
-
-});
+            var scrollValue = $(document).scrollTop();
+            console.log(scrollValue);
+        });
     </script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -39,11 +37,13 @@
         const scrollContainer = isTabletOrMobile() ? window : content;
         const scrollTop = isTabletOrMobile() ? window.pageYOffset : content.scrollTop;
 
+        // 모바일에서 헤더의 위치를 고정시키기 위해 position: fixed 사용
         if (scrollTop > 0) {
-            header.style.position = 'sticky';
+            header.style.position = isTabletOrMobile() ? 'fixed' : 'sticky';
             header.style.top = '0';
             header.style.width = '100%';
             header.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+            header.style.zIndex = '1000'; // 헤더가 항상 위에 있도록 z-index 설정
         } else {
             header.style.position = 'absolute';
             header.style.top = '0';
@@ -58,7 +58,11 @@
 
     // 화면 크기 변경 시 스크롤 이벤트 재설정 (PC ↔ 모바일 전환)
     window.addEventListener('resize', handleScroll);
+
+    // 초기 로딩 시 한 번 호출하여 헤더 위치 설정
+    handleScroll();
 });
+
     </script>
 
     <div id="wrap">
@@ -94,107 +98,104 @@
                                 <li>UX/UI</li>
                                 <li>figma</li>
                                 <li>Responsive</li>
-                                <li>2023</li>
                             </ul>
                         </div>
                         <div class="work_detail">
                             <img src="images/close-button.png" alt="Close" class="close-button">
-                            <ul>
-                                <li>UX/UI</li>
-                                <li>figma</li>
-                                <li>Responsive</li>
-                                <li>2023</li>
+                            <ul class="work_tag">
+                                <li><span>UX/UI</span></li>
+                                <li><span>figma</span></li>
+                                <li><span>Responsive</span></li>
+                                <li><span>2024</span></li>
                             </ul>
                             <h4>KOVO</h4>
-                            <p>한국 배구연맹 KOVO의 웹 사이트 및 어플리케이션 화면 디자인 개선 작업</p>
+                            <p> 한국 배구연맹(KOVO) 웹사이트와 애플리케이션의 UI/UX 디자인 개선 작업물입니다. 주요 작업으로는 메인 화면을 비롯해 티켓 예매 서비스, 마이페이지 관리, 경매 서비스 등 KOVO에서 제공하는 다양한 서비스 화면을 전반적으로 개선하였습니다. 특히, 사용자 경험을 더욱 향상시키기 위해 디자인 시스템을 사용하여 직관적이고 일관성 있는 인터페이스를 구축하고, 실제 사용자 피드백을 반영하여 지속적으로 디벨롭해 나갔습니다. 이를 통해 KOVO가 제공하는 모든 서비스를 사용자들이 보다 편리하고 즐겁게 이용할 수 있도록 전반적인 UI/UX 환경을 개선하였습니다.</p>
+                            <div class="detail_img"><img src="images/kovo_detail.png" alt=""></div>
                         </div>
                     </li>
                     <li>
                         <div class="work_tit">
-                            <h3>KOVO</h3>
+                            <h3>Pet Service</h3>
                             <ul>
                                 <li>UX/UI</li>
                                 <li>figma</li>
-                                <li>Responsive</li>
-                                <li>2023</li>
                             </ul>
                         </div>
                         <div class="work_detail">
                             <img src="images/close-button.png" alt="Close" class="close-button">
-                            <ul>
-                                <li>UX/UI</li>
-                                <li>figma</li>
-                                <li>Responsive</li>
-                                <li>2023</li>
+                            <ul class="work_tag">
+                                <li><span>UX/UI</span></li>
+                                <li><span>figma</span></li>
+                                <li><span>App</span></li>
+                                <li><span>2024</span></li>
                             </ul>
-                            <h4>KOVO</h4>
-                            <p>한국 배구연맹 KOVO의 웹 사이트 및 어플리케이션 화면 디자인 개선 작업</p>
+                            <h4>Pet Service</h4>
+                            <p>반려동물을 가족처럼 여기는 사람들이 점점 많아지면서, 강아지와 고양이를 위한 의료 서비스나 건강한 식품에 대한 관심도 함께 커지고 있습니다. 이에 따라, 반려동물의 건강 관리뿐만 아니라 생애 주기별로 필요한 정보들을 체계적으로 기록하고 정리할 수 있는 애플리케이션을 디자인하게 되었습니다. 이 앱은 보호자들이 반려동물의 성장 과정과 건강 상태를 쉽게 추적하고, 필요한 정보를 한눈에 확인할 수 있도록 돕는 것을 목표로 작업하였습니다.</p>
+                            <div class="detail_img"><img src="images/pet_detail.png" alt=""></div>
                         </div>
                     </li>
                     <li>
                         <div class="work_tit">
-                            <h3>KOVO</h3>
+                            <h3>Cosmetics</h3>
                             <ul>
-                                <li>UX/UI</li>
-                                <li>figma</li>
-                                <li>Responsive</li>
-                                <li>2023</li>
+                                <li>Web</li>
+                                <li>Photoshop</li>
                             </ul>
                         </div>
                         <div class="work_detail">
                             <img src="images/close-button.png" alt="Close" class="close-button">
-                            <ul>
-                                <li>UX/UI</li>
-                                <li>figma</li>
-                                <li>Responsive</li>
-                                <li>2023</li>
+                            <ul class="work_tag">
+                                <li><span>Web</span></li>
+                                <li><span>Photoshop</span></li>
+                                <li><span>2023</span></li>
                             </ul>
-                            <h4>KOVO</h4>
-                            <p>한국 배구연맹 KOVO의 웹 사이트 및 어플리케이션 화면 디자인 개선 작업</p>
+                            <h4>Cosmetics</h4>
+                            <p>2030 여성을 위한 자연친화적인 화장품 브랜드 홈페이지를 가상으로 디자인하였습니다. 홈페이지 전체적으로 부드러운 톤의 사진과 색감을 사용하였으며 깔끔한 느낌을 주기 위해 고딕체를 사용하였습니다. 사용자들이 쉽게 정보를 탐색하고 얻을 수 있도록 직관적인 네비게이션과 레이아웃으로 구성했습니다.</p>
+                            <div class="detail_img"><img src="images/beauty_detail.png" alt=""></div>
                         </div>
                     </li>
                     <li>
                         <div class="work_tit">
-                            <h3>KOVO</h3>
+                            <h3>Graphic Design</h3>
                             <ul>
-                                <li>UX/UI</li>
-                                <li>figma</li>
-                                <li>Responsive</li>
-                                <li>2023</li>
+                                <li>Adobe</li>
+                                <li>2024</li>
                             </ul>
                         </div>
                         <div class="work_detail">
                             <img src="images/close-button.png" alt="Close" class="close-button">
-                            <ul>
-                                <li>UX/UI</li>
-                                <li>figma</li>
-                                <li>Responsive</li>
-                                <li>2023</li>
+                            <ul class="work_tag">
+                                <li><span>Photoshop</span></li>
+                                <li><span>illustrator</span></li>
+                                <li><span>dimesion</span></li>
+                                <li><span>2024</span></li>
                             </ul>
-                            <h4>KOVO</h4>
-                            <p>한국 배구연맹 KOVO의 웹 사이트 및 어플리케이션 화면 디자인 개선 작업</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="work_tit">
-                            <h3>KOVO</h3>
-                            <ul>
-                                <li>UX/UI</li>
-                                <li>figma</li>
-                                <li>Responsive</li>
-                                <li>2023</li>
+                            <h4>Graphic Design</h4>
+                            <p>Photoshop, illustrator, dimension 등을 사용한 그래픽 디자인입니다. 컨셉과 주제 모두 자유인 개인 작업물입니다.</p>
+                            <ul class="work_glist">
+                                <li><img src="images/240429_face.jpg" alt=""></li>
+                                <li><img src="images/240429_heart.jpg" alt=""></li>
+                                <li><img src="images/240429_newwave.jpg" alt=""></li>
+                                <li><img src="images/240505_cuboid.jpg" alt=""></li>
+                                <li><img src="images/240505_vision.jpg" alt=""></li>
+                                <li><img src="images/240517_kkam.jpg" alt=""></li>
+                                <li><img src="images/240506_myo.jpg""></li>
+                                <li><img src="images/240511_dive3.jpg" alt=""></li>
+                                <li><img src="images/240513_time.jpg" alt=""></li>
+                                <li><img src="images/240514_supernova2.jpg" alt=""></li>
+                                <li><img src="images/240516_dune.jpg" alt=""></li>
+                                <li><img src="images/240520_tat.jpg" alt=""></li>
+                                <li><img src="images/240522_masterpiece.jpg" alt=""></li>
+                                <li><img src="images/240525_typewriter.jpg" alt=""></li>
+                                <li><img src="images/240528_armageddon.jpg" alt=""></li>
+                                <li><img src="images/240601_flower.jpg" alt=""></li>
+                                <li><img src="images/240602_wonderwall.jpg" alt=""></li>
+                                <li><img src="images/240606_prometheus.jpg" alt=""></li>
+                                <li><img src="images/240609_summer.jpg" alt=""></li>
+                                <li><img src="images/240614_SAVIOR.jpg" alt=""></li>
+                                <li><img src="images/240612_david.jpg" alt=""></li>
+                                <li><img src="images/240622_kkami3.jpg" alt=""></li>
                             </ul>
-                        </div>
-                        <div class="work_detail">
-                            <img src="images/close-button.png" alt="Close" class="close-button">
-                            <ul>
-                                <li>UX/UI</li>
-                                <li>figma</li>
-                                <li>Responsive</li>
-                                <li>2023</li>
-                            </ul>
-                            <h4>KOVO</h4>
-                            <p>한국 배구연맹 KOVO의 웹 사이트 및 어플리케이션 화면 디자인 개선 작업</p>
                         </div>
                     </li>
                 </ul>
@@ -221,117 +222,116 @@
             </div>
             <div id="contact">
                 <h2>Contact</h2>
+                <h3>Get in touch</h3>
+                <a href="mailto:jyy2323@gmail.com">jyy2323@gmail.com</a>
+                <img src="images/contact.jpg" alt="">
             </div>
 
             <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const workTitles = document.querySelectorAll('.work_tit');
-                    const workDetails = document.querySelectorAll('.work_detail');
-                    const visual = document.querySelector('#visual');
-                    const closeButtons = document.querySelectorAll('.close-button');
-                    // Function to check if current screen size is tablet or smaller
-                    const isTabletSize = () => window.innerWidth <= 1024;
-            
-                    // Function to set work_detail size and position based on device type
-                    const setWorkDetailSizeAndPosition = (detail, isTablet) => {
-                        const visualWidth = visual.getBoundingClientRect().width; // #visual의 실제 너비 가져오기
-            
-                        if (isTablet) {
-                            // 태블릿 사이즈: work_detail을 work_tit 바로 밑에 위치시키기
-                            detail.style.position = 'relative';
-                            detail.style.width = '100%';
-                            detail.style.left = '0';
-                            detail.style.transform = 'none'; // transform 효과 제거
-                            
-                        } else {
-                            // PC 사이즈: work_detail의 위치와 크기를 #visual에 맞춰 설정
-                            detail.style.position = 'fixed';
-                            detail.style.width = `${visualWidth}px`; // #visual의 너비와 동일하게 설정
-                            detail.style.left = `-${visualWidth}px`; // 화면 바깥 왼쪽에서 시작
-                            
-                        }
-                    };
-            
-            
-                    // 초기 로드 시 각 work_detail 위치와 크기 설정
-                    workDetails.forEach(detail => setWorkDetailSizeAndPosition(detail, isTabletSize()));
-            
-                    // 각 work_tit에 클릭 이벤트 리스너 추가
-                    workTitles.forEach((workTit, index) => {
-                        workTit.addEventListener('click', function () {
-                            const isTablet = isTabletSize();
-            
-                            // 모든 work_detail의 active 클래스를 제거하고 숨김 처리
-                            workDetails.forEach(detail => {
-                                detail.classList.remove('active');
-                                if (isTablet) {
-                                    detail.style.display = 'none';
-                                } else {
-                                    detail.style.display = 'none';
-                                }
-                            });
+            document.addEventListener('DOMContentLoaded', function () {
+                const workTitles = document.querySelectorAll('.work_tit');
+                const workDetails = document.querySelectorAll('.work_detail');
+                const visual = document.querySelector('#visual');
+                const closeButtons = document.querySelectorAll('.close-button');
+                
+                // 현재 화면이 1024px 이하인지 확인하는 함수
+                const isTabletSize = () => window.innerWidth <= 1024;
 
-                            // 클릭한 work_tit에 해당하는 work_detail 가져오기
-                            const detail = workDetails[index];
-            
-                            // work_detail의 크기와 위치를 설정
-                            setWorkDetailSizeAndPosition(detail, isTablet);
-            
-                            if (isTablet) {
-                                // 태블릿 사이즈: 바로 아래에 위치하고 단순히 display로 보여주기
-                                detail.style.display = 'block';
-                            } else {
-                                // PC 사이즈: transform을 사용해 슬라이드 인 효과 적용
-                                detail.style.display = 'block'; // 보여줌
-                                setTimeout(() => {
-                                    detail.style.transform = `translateX(${visual.getBoundingClientRect().width}px)`; // 슬라이드 인
-                                }, 10); // 레이아웃 트리거를 위해 살짝 지연
-            
-                                detail.classList.add('active'); // active 클래스 추가
-                            }
-                        });
+                // work_detail 초기화 함수
+                const resetWorkDetails = () => {
+                    workDetails.forEach(detail => {
+                        detail.style.display = 'none'; // 모든 work_detail 숨김 처리
+                        detail.style.position = ''; // position 속성 초기화
+                        detail.style.transform = ''; // transform 속성 초기화
+                        detail.classList.remove('active'); // active 클래스 제거
                     });
-            
-                    // close-button 클릭 이벤트 추가
-                    closeButtons.forEach(button => {
-                        button.addEventListener('click', function() {
-                            const workDetail = this.parentElement;
-                            const isTablet = isTabletSize();
-            
-                            if (isTablet) {
-                                // 태블릿 사이즈: 단순히 숨김 처리
-                                workDetail.style.display = 'none';
-                            } else {
-                                // PC 사이즈: transform으로 화면 바깥으로 이동 후 숨김
-                                const visualWidth = visual.getBoundingClientRect().width;
-                                workDetail.style.transform = `translateX(-${visualWidth}px)`; // 왼쪽 바깥으로 이동
-                                setTimeout(() => {
-                                    workDetail.classList.remove('active');
-                                    workDetail.style.display = 'none';
-                                    workDetail.style.transform = '';
-                                }, 300); // 슬라이드 아웃 애니메이션 지속 시간과 맞추기
-                            }
-                        });
-                    });
-            
-                    // 브라우저 크기 변경 시 work_detail의 너비와 위치 업데이트
-                    window.addEventListener('resize', function () {
+                };
+
+                // Function to set work_detail size and position based on device type
+                const setWorkDetailSizeAndPosition = (detail, isTablet) => {
+                    const visualWidth = visual.getBoundingClientRect().width; // #visual의 실제 너비 가져오기
+
+                    if (isTablet) {
+                        // 태블릿 사이즈: work_detail을 work_tit 바로 밑에 위치시키기
+                        detail.style.position = 'relative';
+                        detail.style.width = '100%';
+                        detail.style.left = '0';
+                        detail.style.transform = 'none'; // transform 효과 제거
+                    } else {
+                        // PC 사이즈: work_detail의 위치와 크기를 #visual에 맞춰 설정
+                        detail.style.position = 'fixed';
+                        detail.style.width = `${visualWidth}px`; // #visual의 너비와 동일하게 설정
+                        detail.style.left = `-${visualWidth}px`; // 화면 바깥 왼쪽에서 시작
+                    }
+                };
+
+                // 초기 로드 시 각 work_detail 위치와 크기 설정
+                resetWorkDetails(); // 모든 work_detail 초기화
+                workDetails.forEach(detail => setWorkDetailSizeAndPosition(detail, isTabletSize()));
+
+                // 각 work_tit에 클릭 이벤트 리스너 추가
+                workTitles.forEach((workTit, index) => {
+                    workTit.addEventListener('click', function () {
                         const isTablet = isTabletSize();
-            
-                        workDetails.forEach(detail => {
-                            if (detail.classList.contains('active')) {
-                                setWorkDetailSizeAndPosition(detail, isTablet);
-            
-                                if (!isTablet) {
-                                    // PC 사이즈에서는 슬라이드 효과를 유지
-                                    detail.style.transform = `translateX(${visual.getBoundingClientRect().width}px)`; // visual의 넓이만큼 이동
-                                }
-                            }
-                        });
+
+                        // 모든 work_detail의 active 클래스를 제거하고 숨김 처리
+                        resetWorkDetails();
+
+                        // 클릭한 work_tit에 해당하는 work_detail 가져오기
+                        const detail = workDetails[index];
+
+                        // work_detail의 크기와 위치를 설정
+                        setWorkDetailSizeAndPosition(detail, isTablet);
+
+                        if (isTablet) {
+                            // 태블릿 사이즈: 바로 아래에 위치하고 단순히 display로 보여주기
+                            detail.style.display = 'block';
+                        } else {
+                            // PC 사이즈: transform을 사용해 슬라이드 인 효과 적용
+                            detail.style.display = 'block'; // 보여줌
+                            setTimeout(() => {
+                                detail.style.transform = `translateX(${visual.getBoundingClientRect().width}px)`; // 슬라이드 인
+                            }, 10); // 레이아웃 트리거를 위해 살짝 지연
+
+                            detail.classList.add('active'); // active 클래스 추가
+                        }
                     });
                 });
-            
-                </script>
+
+                // close-button 클릭 이벤트 추가
+                closeButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const workDetail = this.parentElement;
+                        const isTablet = isTabletSize();
+
+                        if (isTablet) {
+                            // 태블릿 사이즈: 단순히 숨김 처리
+                            workDetail.style.display = 'none';
+                        } else {
+                            // PC 사이즈: transform으로 화면 바깥으로 이동 후 숨김
+                            const visualWidth = visual.getBoundingClientRect().width;
+                            workDetail.style.transform = `translateX(-${visualWidth}px)`; // 왼쪽 바깥으로 이동
+                            setTimeout(() => {
+                                workDetail.classList.remove('active');
+                                workDetail.style.display = 'none';
+                                workDetail.style.transform = '';
+                            }, 300); // 슬라이드 아웃 애니메이션 지속 시간과 맞추기
+                        }
+                    });
+                });
+
+                // 브라우저 크기 변경 시 work_detail의 너비와 위치 업데이트
+                window.addEventListener('resize', function () {
+                    const isTablet = isTabletSize();
+
+                    resetWorkDetails(); // 모든 work_detail 초기화
+                    workDetails.forEach(detail => {
+                        setWorkDetailSizeAndPosition(detail, isTablet);
+                    });
+                });
+            });
+        
+            </script>
                 
         </div>
     </div>

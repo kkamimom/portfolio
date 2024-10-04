@@ -292,8 +292,85 @@ header .gnb li:hover a {
     z-index: 10; /* 다른 요소보다 위로 */
     transition: transform 0.6s ease; /* 트랜지션 적용 */
     color:#fff;
+    padding: 24px;
+    overflow-y: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    scroll-behavior: smooth;
 }
 
+#works .work_detail::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+#works .work_detail .close-button {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+}
+
+#works .work_detail .work_tag {
+    margin-bottom: 40px;
+}
+
+#works .work_detail .work_tag li {
+    display: block;
+    margin-bottom: 4px;
+}
+
+#works .work_detail .work_tag li span {
+    font-size: 14px;
+    font-weight: 400;
+    color:#fff;
+    padding: 4px 12px;
+    border-radius: 14px;
+    border: 1px solid #fff;
+    background: transparent;
+    display: inline-block;
+}
+
+#works .work_detail .work_tag li:last-child {
+    margin-bottom: 0;
+}
+
+#works .work_detail h4 {
+    font-family: Helvetica;
+    font-weight: 100;
+    color:#fff;
+    font-size:70px;
+    margin-bottom: 40px;
+}
+
+#works .work_detail p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+#works .work_detail .work_glist {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+#works .work_detail .work_glist li {
+    width: 49%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+#works .work_detail .work_glist li:nth-child(2n) {
+    margin-right: 0;
+}
+
+#works .work_detail .detail_img img {
+    width: 100%;
+}
+
+#works .work_detail .work_glist li img {
+    width: 100%;
+}
 
 #about {
     padding: 0 24px;
@@ -340,9 +417,35 @@ header .gnb li:hover a {
     margin-top: 4px;
 }
 
+#contact {
+    padding: 160px 24px;
+    color: #fff;
+}
+
+#contact h3 {
+    font-size:16px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+#contact a {
+    display: block;
+    font-family: Helvetica;
+    font-weight: 100;
+    color:#fff;
+    font-size:28px;
+    margin-bottom: 24px;
+}
+
+#contact img {
+    width: 100%;
+    height: auto;
+}
 
 /* Tablet */
 @media (max-width: 1024px) {
+    
     #wrap {
         display: block;
     }
@@ -356,6 +459,7 @@ header .gnb li:hover a {
     }
     
     #visual {
+        width: 100%;
         height: 90vh;
         padding: 126px 24px 24px 24px;
     }
@@ -369,13 +473,18 @@ header .gnb li:hover a {
         width: 100%;
     }
 
+    #works .work_detail {
+        height: auto;
+    }
+
     header {
         position: fixed; /* 최상단에 고정 */
         top: 0;
         left: 0;
     }
-    
+
     #content {
+        width: 100%;
         height: auto;
     }
 
@@ -383,9 +492,10 @@ header .gnb li:hover a {
         padding-top: 120px;
     }
 
-    #works .work_detail {
-        display: none;
+    #contact {
+        padding: 120px 24px;
     }
+    
     
 }
 
@@ -450,6 +560,44 @@ header .gnb li:hover a {
         padding: 4px 8px;
     }
 
+    #works .work_detail {
+        padding: 16px;
+    }
+
+    #works .work_detail .close-button {
+        right: 16px;
+        top: 16px;
+        width: 38px;
+    }
+
+    #works .work_detail .work_tag {
+        margin-bottom: 20px;
+    }
+
+    #works .work_detail .work_tag li span {
+        font-size: 12px;
+        padding: 4px 9px;
+    }
+
+    #works .work_detail h4 {
+        font-size: 38px;
+        margin-bottom: 20px;
+    }
+
+    #works .work_detail p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    #works .work_detail .work_glist li {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #about {
+        padding: 0 16px;
+    }
+
     #about p {
         font-size:14px;
         margin-bottom: 12px;
@@ -468,4 +616,19 @@ header .gnb li:hover a {
         font-size:12px;
         padding: 4px 8px;
     }
+
+    #contact {
+        padding: 40px 16px;
+    }
+
+    #contact h3 {
+        font-size:14px;
+        margin-bottom: 12px;
+    }
+    
+    #contact a {
+        font-size:18px;
+        margin-bottom: 12px;
+    }
+    
 }
