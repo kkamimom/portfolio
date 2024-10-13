@@ -341,10 +341,82 @@ header .gnb li:hover a {
     margin-bottom: 40px;
 }
 
+#works .work_detail h5 {
+    font-family: 'Helvetica', 'Pretendard Variable';
+    font-weight: 400;
+    color:#fff;
+    font-size:28px;
+    margin-bottom: 16px;
+}
+
+#works .work_detail .description {
+    margin-bottom: 40px;
+}
+
+#works .work_detail .description li {
+    font-size: 16px;
+    line-height: 1.5;
+    position:relative;
+    padding: 0 0 0 10px;
+    margin-bottom: 4px;
+}
+
+#works .work_detail .description li:last-child {
+    margin-bottom: 0;
+}
+
+#works .work_detail .description li::before {
+    content:'';
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    left:0;
+    top:10px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+#works .work_detail .w100 {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
 #works .work_detail p {
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 40px;
+}
+
+#works .work_detail .process {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#works .work_detail .process .arrow {
+    margin: 0 40px;
+}
+
+#works .work_detail .k_color {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#works .work_detail .k_color li {
+    margin-right: 16px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#works .work_detail .k_color li span {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 8px;
 }
 
 #works .work_detail .work_glist {
@@ -588,9 +660,65 @@ header .gnb li:hover a {
         margin-bottom: 20px;
     }
 
+    #works .work_detail h5 {
+        font-size:20px;
+        margin-bottom: 8px;
+    }
+
     #works .work_detail p {
         font-size: 14px;
         margin-bottom: 20px;
+    }
+    #works .work_detail .w100 {
+        margin-bottom: 20px;
+    }
+
+    #works .work_detail .description {
+        margin-bottom: 20px;
+    }
+
+    #works .work_detail .description li{
+        font-size:14px;
+    }
+
+    #works .work_detail .description li::before { 
+        top:8px;
+    }
+
+    #works .work_detail .process {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    #works .work_detail .process .arrow {
+        margin: 20px 0 !important;
+        height: 40px;
+    }
+
+    #works .work_detail .process .arrow img{
+        rotate: 90deg;
+        height: 32px;
+    }
+
+    #works .work_detail .k_color {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    #works .work_detail .k_color li {
+        margin-right: 0;
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 12px;
+    }
+
+    #works .work_detail .k_color li span {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0;
+        margin-right: 8px;
     }
 
     #works .work_detail .work_glist li {
