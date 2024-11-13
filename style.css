@@ -225,6 +225,10 @@ header .gnb li:hover a {
     padding-top: 160px;
 }
 
+#content #about {
+    padding-bottom: 160px;
+} 
+
 #content > div > h2 {
     font-family: Helvetica;
     font-weight: 800;
@@ -569,6 +573,10 @@ header .gnb li:hover a {
         padding-top: 120px;
     }
 
+#content #about {
+    padding-bottom: 120px;
+} 
+
     #contact {
         padding: 120px 24px;
     }
@@ -596,6 +604,10 @@ header .gnb li:hover a {
     #content > div {
         padding-top: 40px;
     }
+
+#content #about {
+    padding-bottom: 40px;
+} 
 
     #content > div > h2 {
         font-size:28px;
